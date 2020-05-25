@@ -13,4 +13,5 @@ login:
 
 run:
 	$(eval NAME_CONTAINER ?= jupyter)
-	@docker run --rm --name "${NAME_CONTAINER}" -e "NOTEBOOK_SECRET=${NOTEBOOK_SECRET}" -p 8888:8888 ${IMG}
+	$(eval NOTEBOOK_DIR ?= `pwd`)
+	@docker run --rm --name "${NAME_CONTAINER}" -v "${NOTEBOOK_DIR}:/workdir/notebooks" -e "NOTEBOOK_SECRET=${NOTEBOOK_SECRET}" -p 8888:8888 ${IMG}
