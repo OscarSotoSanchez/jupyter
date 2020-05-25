@@ -3,6 +3,7 @@
 [ -z "${NOTEBOOK_SECRET}" ] && NOTEBOOK_SECRET=""
 
 jupyter-notebook \
+    --no-browser \
     --notebook-dir=/workdir/notebooks \
     --NotebookApp.token="${NOTEBOOK_SECRET}" \
     --ip='0.0.0.0' \

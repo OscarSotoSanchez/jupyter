@@ -1,4 +1,4 @@
-NAME   := oscarsotosanchez/jupyter
+NAME   := oscarsotosanchez/jupyter-notebook
 TAG    ?= basic
 IMG    := ${NAME}:${TAG}
 
