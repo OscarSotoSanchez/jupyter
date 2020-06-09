@@ -1,7 +1,7 @@
 #!/bin/bash
 
 LAST_COMMIT_ID=$(git log --pretty=format:'%h' -n 1)
-DIR_WITH_CHANGES=$(git diff --dirstat=files,0 "$LAST_COMMIT_ID" | sed 's/^[ 0-9.]\+% //g')
+DIR_WITH_CHANGES=$(git diff-tree --no-commit-id --name-only -r "${LAST_COMMIT_ID}" | cut -d"/" -f1 | uniq)
 
 for DIR in ${DIR_WITH_CHANGES}; do
     if [ -d "${DIR}" ]; then

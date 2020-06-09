@@ -22,5 +22,4 @@ RUN chmod +x /usr/local/bin/entrypoint.sh && \
     mkdir -p /workdir/notebooks
 
 WORKDIR /workdir/notebooks
-
 CMD /usr/local/bin/entrypoint.sh
