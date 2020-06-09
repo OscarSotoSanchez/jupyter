@@ -3,7 +3,7 @@ TAG    ?= basic
 IMG    := ${NAME}:${TAG}
 
 build:
-	@docker build -t ${IMG} .
+	@docker build -f "${TAG}/${TAG}.Dockerfile" -t ${IMG} ./${TAG}
 
 push:
 	@docker push ${IMG}

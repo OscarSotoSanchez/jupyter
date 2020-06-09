@@ -2,6 +2,7 @@
 
 [ -z "${NOTEBOOK_SECRET}" ] && NOTEBOOK_SECRET=""
 
+# Running jupyter notebook
 jupyter-notebook \
     --no-browser \
     --notebook-dir=/workdir/notebooks \

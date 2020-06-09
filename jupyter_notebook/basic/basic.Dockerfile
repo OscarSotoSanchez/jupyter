@@ -16,7 +16,7 @@ RUN apk update \
     && ln -s /usr/bin/python3 /usr/bin/python    
 
 # Entrypoint
-COPY ./entrypoint.sh /usr/local/bin
+COPY ./basic.entrypoint.sh /usr/local/bin/entrypoint.sh
 
 RUN chmod +x /usr/local/bin/entrypoint.sh && \
     mkdir -p /workdir/notebooks
