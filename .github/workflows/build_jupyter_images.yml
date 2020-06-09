@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - master
+    paths:
+      - 'jupyter_lab/**'
+      - 'jupyter_notebook/**'
 
 jobs:
   create_image:
