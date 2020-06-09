@@ -7,3 +7,4 @@ RUN apk add --update nodejs \
 
 # Install Jupyter Lab extensions
 RUN jupyter labextension install @jupyterlab/toc
+
