@@ -12,7 +12,7 @@ BUILD_IMAGES=$(echo "${LAST_CHANGES}" | grep "jupyter_lab" | cut -d"/" -f2)
 COMPILE=false
 
 while IFS= read -r IMAGE; do
-    if echo "${BUILD_IMAGES}" | grep -w "${IMAGE}" > /dev/null ; then
+    if echo "${BUILD_IMAGES}" | grep -w "${IMAGE}" > /dev/null; then
         printf "\n  Building %s image..." "${IMAGE}"
         make login build push TAG="${IMAGE}"
         COMPILE=true
@@ -31,7 +31,7 @@ BUILD_IMAGES=$(echo "${LAST_CHANGES}" | grep "jupyter_notebook" | cut -d"/" -f2)
 COMPILE=false
 
 while IFS= read -r IMAGE; do
-    if echo "${BUILD_IMAGES}" | grep -w "${IMAGE}"; then
+    if echo "${BUILD_IMAGES}" | grep -w "${IMAGE}" > /dev/null; then
         printf "\n Building %s image..." "${IMAGE}"
         make login build push TAG="${IMAGE}"
         COMPILE=true
