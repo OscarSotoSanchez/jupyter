@@ -1,8 +1,7 @@
 FROM alpine:3.11
 
 # Install required software
-RUN apk update \
-    && apk add --no-cache python3 \
+RUN apk add --update --no-cache python3 \
     build-base \
     python3-dev \
     zeromq-dev \
@@ -14,7 +13,9 @@ RUN apk update \
     && pip install --upgrade --no-cache-dir jupyter \
     jupyterlab \
     matplotlib \ 
-    && ln -s /usr/bin/python3 /usr/bin/python    
+    && ln -s /usr/bin/python3 /usr/bin/python \
+    && apk del .builddeps \
+    && rm -rf /root/.cache  
 
 # Entrypoint
 COPY ./basic.entrypoint.sh /usr/local/bin/entrypoint.sh
