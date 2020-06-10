@@ -13,10 +13,8 @@ RUN apk add --update --no-cache python3 \
     && pip install --upgrade --no-cache-dir jupyter \
     jupyterlab \
     matplotlib \ 
-    && ln -s /usr/bin/python3 /usr/bin/python \
-    && apk del .builddeps \
-    && rm -rf /root/.cache  
-
+    && ln -s /usr/bin/python3 /usr/bin/python
+    
 # Entrypoint
 COPY ./basic.entrypoint.sh /usr/local/bin/entrypoint.sh
 

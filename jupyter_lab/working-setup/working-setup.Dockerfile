@@ -21,10 +21,7 @@ RUN apk add --update --no-cache g++ \
     && pip install --upgrade --no-cache-dir numpy==1.17.3 \
     scipy==1.3.1 \
     pandas \
-    seaborn \
-    && apk del .builddeps \
-    && rm -rf /root/.cache
+    seaborn
 
 # Install Jupyter Lab extensions
-RUN jupyter labextension install @jupyterlab/toc \
-    && rm -rf /root/.cache
+RUN jupyter labextension install @jupyterlab/toc
